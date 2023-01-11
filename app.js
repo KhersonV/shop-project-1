@@ -11,7 +11,6 @@ for (let i = 0; i < addToCartBtns.length; i++) {
 // change like state
 
 let likeBtns = document.querySelectorAll(`.wish-list`);
-console.log(likeBtns)
 likeBtns.forEach((btn) => btn.addEventListener(`click`, function(e){
     
     e.target.classList.toggle(`liked`);
@@ -43,6 +42,22 @@ function onClick(e) {
 document.querySelector(".submit-form").addEventListener("click", function (e) {
     e.preventDefault();
 });
+
+//slider
+$(".slider-block").slick({
+    autoplay: true,
+    dots: true,
+});
+
+//onscroll
+
+window.addEventListener("scroll", onScroll)
+
+function onScroll() {
+      if(scrollY >= 1383) {openModal()
+        window.removeEventListener("scroll",onScroll)
+    }
+};
 
 
 
